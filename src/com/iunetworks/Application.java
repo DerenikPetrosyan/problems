@@ -1,18 +1,26 @@
 package com.iunetworks;
 
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
-public class Application  extends MathArray{
+public class Application  {
     public static void main(String[] args) {
-        int[] tver={1,5,-5,8,-3,4,-7,2,-6};
+        int[] tver={1,5,-5,8,3,4,-7,26,-6};
 
-        drakanTveriMijinTvabanakan(tver);
-        bacasakanTveriMijinQarakusayin(tver);
-        zuygIndexGumar(tver);
-        sumAbs(tver);
-        tarqanak(tver);
-        sumMijakayq(tver);
+//        MathArray.drakanTveriMijinTvabanakan(tver);
+//        MathArray.bacasakanTveriMijinQarakusayin(tver);
+//        MathArray.zuygIndexGumar(tver);
+//        MathArray.sumAbs(tver);
+//        MathArray.tarQanak(tver);
+//        MathArray.sumMijkayq(tver);
+//        MathArray.poqrKicQanak(tver);
+//        MathArray.sumMijBazIndexK(tver);
+//        MathArray.zuygKentSumAngam(tver);
+//        MathArray.bazmapatikKin(tver);
 
+//        ArrayMaxMin.sumMaxMIn(tver);
+//        ArrayMaxMin.maxSumIndex(tver);
 
     }
 }
