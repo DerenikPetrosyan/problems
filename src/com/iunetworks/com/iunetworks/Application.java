@@ -7,8 +7,7 @@ import java.util.Arrays;
 public class Application  {
     public static void main(String[] args) {
         int[] tver={1,5,-5,8,3,4,-7,26,-6};
-        int[] x={1,-5,-2,9,32,7,-6,7};
-        int[] y={2,-5,2,6,-9,-7,25,-2};
+
 
 //        MathArray.drakanTveriMijinTvabanakan(tver);
 //        MathArray.bacasakanTveriMijinQarakusayin(tver);
@@ -23,6 +22,20 @@ public class Application  {
 
 //        ArrayMaxMin.sumMaxMIn(tver);
 //        ArrayMaxMin.maxSumIndex(tver);
+
+        int[] x={1,-5,-2,9,32,7,-6,7};
+        int[] y={2,-5,2,6,-9,-7,25,-2};
+
+
+//        ArrayXY.mijXYartadryal(x,y);
+//        ArrayXY.drakanQanakXY(x,y);
+//        ArrayXY.xKentYzuygsum(x,y);
+
+        char[] sim={'a','#','n','3','a','/','q','m','a'};
+
+//       CharSim.aCHar(sim);
+//       CharSim.kicPoqr(sim);
+//       CharSim.kentIndex(sim);
 
     }
 }
