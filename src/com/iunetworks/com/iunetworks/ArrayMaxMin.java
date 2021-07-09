@@ -43,4 +43,7 @@ public class ArrayMaxMin {
         i = sum + k;
         System.out.println(i);
     }
+
+
+
 }
