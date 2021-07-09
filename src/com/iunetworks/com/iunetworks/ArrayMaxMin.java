@@ -18,7 +18,7 @@ public class ArrayMaxMin {
             }
         }
 
-        sum = tver[0] + tver[tver.length - 1];
+         sum = tver[0] + tver[tver.length - 1];
         System.out.println(sum);
     }
 
@@ -26,24 +26,21 @@ public class ArrayMaxMin {
         int sum = 0;
         int k = 0;
 
-        int i;
-        for(i = 0; i < tver.length; ++i) {
+
+        for(int i = 0; i < tver.length; ++i) {
             if (tver[i] > sum) {
                 sum = tver[i];
             }
         }
 
-        for(i = 0; i < tver.length; ++i) {
+        for(int i = 0; i < tver.length; ++i) {
             if (tver[i] == sum) {
                 k = i;
                 break;
             }
         }
 
-        i = sum + k;
-        System.out.println(i);
+       int z = sum + k;
+        System.out.println(z);
     }
-
-
-
 }
