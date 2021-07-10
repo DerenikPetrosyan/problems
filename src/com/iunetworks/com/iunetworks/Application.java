@@ -40,8 +40,11 @@ public class Application  {
                  char[] Y={'9','9','9','9'};
 //       char[] X={'1','2'};
 //        char[] Y={'1','2'};
-       ActionInteger.sumInteger(X,Y);
+//      ActionInteger.sumInteger(X,Y);
 
+
+
+        System.out.println(Arrays.toString(Summarize.doSum(X,Y)));
 
 
 
