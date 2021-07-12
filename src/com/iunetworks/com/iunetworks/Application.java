@@ -36,15 +36,16 @@ public class Application  {
 //       CharSim.aCHar(sim);
 //       CharSim.kicPoqr(sim);
 //       CharSim.kentIndex(sim);
-     char[] X={'9','9','9','9','9','9','9'};
-                 char[] Y={'9','9','9','9'};
-//       char[] X={'1','2'};
-//        char[] Y={'1','2'};
+     char[] X={'9','9','9','9','9'};
+         char[] Y={'9','9','9','9'};
+//       char[] X={'9','9','9'};
+//           char[] Y={'9','9'};
 //      ActionInteger.sumInteger(X,Y);
 
+//        System.out.println(Arrays.toString(Summarize.doSum(X,Y)));
+   System.out.println(Arrays.toString(MultiplicationBigInteger.doMultiplication(X,Y)));
 
 
-        System.out.println(Arrays.toString(Summarize.doSum(X,Y)));
 
 
 

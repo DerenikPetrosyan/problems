@@ -11,7 +11,7 @@ public class Summarize {
     public static char[] doSum(char[] firstArray, char[] secondArray) {
            char[] longArray =findLongArray(firstArray, secondArray);
            char[] shortArray=findSHortArray(firstArray,secondArray);
-        char[] result = new char[longArray.length + 1];
+           char[] result = new char[longArray.length + 1];
 
         for (int i = longArray.length; i >= 0; --i) {
             result[i] = '0';
