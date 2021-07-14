@@ -1,52 +1,30 @@
 package com.iunetworks;
 
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Application  {
     public static void main(String[] args) {
-    //    int[] tver={1,5,-5,8,3,4,-7,26,-6};
+  Matrix matrix=new Matrix(4,2);
+  Matrix matrix2=new Matrix(2,3);
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 2; j++) {
+                matrix.matrtix[i][j]=1;
 
+            }
+        }
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
 
-//        MathArray.drakanTveriMijinTvabanakan(tver);
-//        MathArray.bacasakanTveriMijinQarakusayin(tver);
-//        MathArray.zuygIndexGumar(tver);
-//        MathArray.sumAbs(tver);
-//        MathArray.tarQanak(tver);
-//        MathArray.sumMijkayq(tver);
-//        MathArray.poqrKicQanak(tver);
-//        MathArray.sumMijBazIndexK(tver);
-//        MathArray.zuygKentSumAngam(tver);
-//        MathArray.bazmapatikKin(tver);
+                matrix2.matrtix[i][j]=2;
+            }
+        }
+// matrix.printMatrix();
+//
+// matrix2.printMatrix();
+//  matrix.multiplicationMatrix(matrix2).printMatrix();
 
-//        ArrayMaxMin.sumMaxMIn(tver);
-//        ArrayMaxMin.maxSumIndex(tver);
-
- //       int[] x={1,-5,-2,9,32,7,-6,7};
- //       int[] y={2,-5,2,6,-9,-7,25,-2};
-
-
-//        ArrayXY.mijXYartadryal(x,y);
-//        ArrayXY.drakanQanakXY(x,y);
-//        ArrayXY.xKentYzuygsum(x,y);
-
-   //     char[] sim={'a','#','n','3','a','/','q','m','a'};
-
-//       CharSim.aCHar(sim);
-//       CharSim.kicPoqr(sim);
-//       CharSim.kentIndex(sim);
-     char[] X={'9','9','9','9','9'};
-         char[] Y={'9','9','9','9'};
-//       char[] X={'9','9','9'};
-//           char[] Y={'9','9'};
-//      ActionInteger.sumInteger(X,Y);
-
-//        System.out.println(Arrays.toString(Summarize.doSum(X,Y)));
-   System.out.println(Arrays.toString(MultiplicationBigInteger.doMultiplication(X,Y)));
-
-
-
+//        matrix.multiplicConstMatrix(5).printMatrix();
 
 
     }
