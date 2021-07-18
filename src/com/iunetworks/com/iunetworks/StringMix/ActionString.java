@@ -1,12 +1,69 @@
 package com.iunetworks.StringMix;
 
 public class ActionString {
+    private static char[] oneSpaceText(char[] textCHar) {
+        char[] oneSpace = new char[textCHar.length];
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] == ' ' && textCHar[i + 1] == ' ') {
+                textCHar[i] = 0;
+            }
+            oneSpace[i] = textCHar[i];
+        }
+
+        return oneSpace;
+    }
+
+
     private static char[] stringCHarArrays(String text) {
         char[] textCHar = new char[text.length()];
         for (int i = 0; i < textCHar.length; i++) {
             textCHar[i] = text.charAt(i);
         }
         return textCHar;
+    }
+
+    private static char[][] lenghtTextWord(String text) {
+        char[] textCHar = oneSpaceText(stringCHarArrays(text));
+        int count = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] == ' ') {
+                count++;
+            }
+        }
+        int[] lenghtWord = new int[count + 1];
+        int value = 0;
+        int letter = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] != 0 && textCHar[i] != ' ') {
+                value++;
+            }
+            if (textCHar[i] == ' ') {
+                lenghtWord[letter] = value;
+                value = 0;
+                letter++;
+            }
+
+        }
+        lenghtWord[lenghtWord.length - 1] = value;
+        char[][] wordCHar = new char[lenghtWord.length][];
+        for (int i = 0; i < lenghtWord.length; i++) {
+            wordCHar[i] = new char[lenghtWord[i]];
+        }
+        int n = 0;
+        int m = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] == ' ') {
+                n++;
+            }
+            if (textCHar[i] == ' ' || textCHar[i] == 0) {
+                m = 0;
+                continue;
+            }
+            wordCHar[n][m] = textCHar[i];
+            m++;
+
+        }
+        return wordCHar;
     }
 
     public static char[] printMatrix(char[] matrix) {
@@ -159,5 +216,83 @@ public class ActionString {
         return countName;
     }
 
+    public static int containB(String text) {
+        char[] textCHar = stringCHarArrays(text);
+        int count = 0;
+        int value = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] == 'B') {
+                count++;
+            }
+            if (textCHar[i] == ' ') {
+                if (count > 0) {
+                    value++;
+                }
+                count = 0;
+            }
+        }
+        if (count > 0) {
+            value++;
+        }
+        return value;
+    }
+
+    public static int containTwoB(String text) {
+        char[] textCHar = stringCHarArrays(text);
+        int count = 0;
+        int value = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] == 'B') {
+                count++;
+            }
+            if (textCHar[i] == ' ') {
+                if (count == 2) {
+                    value++;
+                }
+                count = 0;
+            }
+        }
+        if (count == 2) {
+            value++;
+        }
+        return value;
+    }
+
+    public static char[] shortWord(String text) {
+        char[][] wordCHar = lenghtTextWord(text);
+        int count = 0;
+        int value=wordCHar[0].length;
+        for (int i = 1; i < wordCHar.length; i++) {
+            if(wordCHar[i].length<value){
+                value=wordCHar[i].length;
+                count=i;
+            }
+        }
+        return wordCHar[count];
+    }
+    public static char[] longWord(String text) {
+        char[][] wordCHar = lenghtTextWord(text);
+        int count = 0;
+        int value=wordCHar[0].length;
+        for (int i = 1; i < wordCHar.length; i++) {
+            if(wordCHar[i].length>value){
+                value=wordCHar[i].length;
+                count=i;
+            }
+        }
+        return wordCHar[count];
+    }
+
+    public static void pointDivorced(String text){
+        char[][] wordCHar = lenghtTextWord(text);
+        char[] pointText=new char[text.length()];
+        for (int i = 0; i < wordCHar.length; i++) {
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                System.out.print(wordCHar[i][j]);
+            }
+            System.out.print('.');
+        }
+
+    }
 
 }
