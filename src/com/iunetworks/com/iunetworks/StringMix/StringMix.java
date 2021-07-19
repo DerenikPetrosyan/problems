@@ -21,6 +21,13 @@ public class StringMix {
 //        System.out.println(Arrays.deepToString(ActionString.shortWord(text1)));
 //        System.out.println(Arrays.toString(ActionString.shortWord(text1)));
 //        System.out.println(Arrays.toString(ActionString.longWord(text1)));
-//        System.out.println(ActionString.pointDivorced(text1));
+//       System.out.println(Arrays.toString(ActionString.pointDivorced(text1)));
+//        System.out.println(Arrays.toString(ActionString.equalFirstLetter(text1)));
+//        System.out.println(Arrays.toString(ActionString.equalEndLetter(text1)));
+//        System.out.println(Arrays.toString(ActionString.reversText(text1)));
+//        System.out.println(Arrays.toString(ActionString.sortWordFirstFontText(text1)));
+
+
+
     }
 }

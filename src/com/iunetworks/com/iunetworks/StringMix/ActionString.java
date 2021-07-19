@@ -261,38 +261,163 @@ public class ActionString {
     public static char[] shortWord(String text) {
         char[][] wordCHar = lenghtTextWord(text);
         int count = 0;
-        int value=wordCHar[0].length;
+        int value = wordCHar[0].length;
         for (int i = 1; i < wordCHar.length; i++) {
-            if(wordCHar[i].length<value){
-                value=wordCHar[i].length;
-                count=i;
+            if (wordCHar[i].length < value) {
+                value = wordCHar[i].length;
+                count = i;
             }
         }
         return wordCHar[count];
     }
+
     public static char[] longWord(String text) {
         char[][] wordCHar = lenghtTextWord(text);
         int count = 0;
-        int value=wordCHar[0].length;
+        int value = wordCHar[0].length;
         for (int i = 1; i < wordCHar.length; i++) {
-            if(wordCHar[i].length>value){
-                value=wordCHar[i].length;
-                count=i;
+            if (wordCHar[i].length > value) {
+                value = wordCHar[i].length;
+                count = i;
             }
         }
         return wordCHar[count];
     }
 
-    public static void pointDivorced(String text){
+    public static char[] pointDivorced(String text) {
         char[][] wordCHar = lenghtTextWord(text);
-        char[] pointText=new char[text.length()];
+        int count = 0;
         for (int i = 0; i < wordCHar.length; i++) {
             for (int j = 0; j < wordCHar[i].length; j++) {
-                System.out.print(wordCHar[i][j]);
+                count++;
             }
-            System.out.print('.');
         }
-
+        char[] pointSpace = new char[count + wordCHar.length - 1];
+        int value = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            if (value > 1 && value < pointSpace.length - 1) {
+                pointSpace[value] = '.';
+                value++;
+            }
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                pointSpace[value] = wordCHar[i][j];
+                value++;
+            }
+        }
+        return pointSpace;
     }
+
+    public static char[] equalFirstLetter(String text) {
+        char[][] wordCHar = lenghtTextWord(text);
+        int count = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                count++;
+            }
+        }
+        char[] pointSpace = new char[count + wordCHar.length - 1];
+        int value = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            if (value > 1 && value < pointSpace.length - 1) {
+                pointSpace[value] = ' ';
+                value++;
+            }
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                pointSpace[value] = wordCHar[i][j];
+                if (j != 0) {
+                    if (wordCHar[i][0] == wordCHar[i][j]) {
+                        pointSpace[value] = '.';
+                    }
+                }
+                value++;
+            }
+        }
+        return pointSpace;
+    }
+
+    public static char[] equalEndLetter(String text) {
+        char[][] wordCHar = lenghtTextWord(text);
+        int count = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                count++;
+            }
+        }
+        char[] pointSpace = new char[count + wordCHar.length - 1];
+        int value = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            if (value > 1 && value < pointSpace.length - 1) {
+                pointSpace[value] = ' ';
+                value++;
+            }
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                pointSpace[value] = wordCHar[i][j];
+                if (j < wordCHar[i].length - 1) {
+                    if (wordCHar[i][wordCHar[i].length - 1] == wordCHar[i][j]) {
+                        pointSpace[value] = '.';
+                    }
+                }
+                value++;
+            }
+        }
+        return pointSpace;
+    }
+
+    public static char[] reversText(String text) {
+        char[][] wordCHar = lenghtTextWord(text);
+        int count = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                count++;
+            }
+        }
+        char[] pointSpace = new char[count + wordCHar.length - 1];
+        int value = 0;
+        for (int i = wordCHar.length - 1; i >= 0; i--) {
+            if (value > 1 && value < pointSpace.length - 2) {
+                pointSpace[value] = ' ';
+                value++;
+            }
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                pointSpace[value] = wordCHar[i][j];
+                value++;
+            }
+        }
+        return pointSpace;
+    }
+
+    public static char[] sortWordFirstFontText(String text) {
+        char[][] wordCHar = lenghtTextWord(text);
+        int count = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                count++;
+            }
+        }
+        char[] pointSpace = new char[count + wordCHar.length - 1];
+        int value = 0;
+        for (int i = 0; i < wordCHar.length - 1; i++) {
+            for (int j = 0; j < wordCHar.length - i - 1; j++) {
+                if (wordCHar[j][0] > wordCHar[j + 1][0]) {
+                    char[] velue = wordCHar[j];
+                    wordCHar[j] = wordCHar[j + 1];
+                    wordCHar[j + 1] = velue;
+                }
+            }
+        }
+        int value2 = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            if (value2 > 1 && value2 < pointSpace.length - 1) {
+                pointSpace[value2] = ' ';
+                value2++;
+            }
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                pointSpace[value2] = wordCHar[i][j];
+                value2++;
+            }
+        }
+        return pointSpace;
+    }
+
 
 }
