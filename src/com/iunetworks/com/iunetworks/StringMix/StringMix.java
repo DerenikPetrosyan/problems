@@ -6,6 +6,7 @@ public class StringMix {
     public static void main(String[] args) {
         String text1 = "abihBBvksvkh acaba jBdsabi    gBBkbai jgfg  ggBfjhj maBBgdzggd";
         String text2 = "ab";
+        String text3 = "C:\\Users\\iuser\\Desktop\\problems\\src\\com\\iunetworks\\com\\iunetworks\\StringMix.java";
 //        System.out.println(ActionString.countText(text1, text2));
 //        System.out.println(ActionString.indexLastSecoundText(text1,text2));
 
@@ -28,6 +29,7 @@ public class StringMix {
 //        System.out.println(Arrays.toString(ActionString.sortWordFirstFontText(text1)));
 
 
+        System.out.println(Arrays.toString(ActionString.fileName(text3)));
 
     }
 }

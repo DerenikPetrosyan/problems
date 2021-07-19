@@ -66,6 +66,52 @@ public class ActionString {
         return wordCHar;
     }
 
+    private static char[][] fileExtension(String text) {
+        char[] textCHar = stringCHarArrays(text);
+        int count = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] == '\\') {
+                count++;
+            }
+        }
+        int[] lenghtWord = new int[count + 2];
+        int value = 0;
+        int letter = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] != '\\' && textCHar[i] != '.') {
+                value++;
+            }
+            if (textCHar[i] == '\\' || textCHar[i] == '.') {
+                lenghtWord[letter] = value;
+                value = 0;
+                letter++;
+            }
+
+        }
+        lenghtWord[lenghtWord.length - 1] = value;
+        char[][] wordCHar = new char[lenghtWord.length][];
+        for (int i = 0; i < lenghtWord.length; i++) {
+            wordCHar[i] = new char[lenghtWord[i]];
+        }
+        int n = 0;
+        int m = 0;
+        for (int i = 0; i < textCHar.length; i++) {
+            if (textCHar[i] == '\\'|| textCHar[i] == '.') {
+                n++;
+            }
+            if (textCHar[i] == '\\' || textCHar[i] == '.') {
+                m = 0;
+                continue;
+            }
+            wordCHar[n][m] = textCHar[i];
+            m++;
+
+        }
+        return wordCHar;
+
+
+    }
+
     public static char[] printMatrix(char[] matrix) {
         System.out.print("[ ");
         for (int i = 0; i < matrix.length; i++) {
@@ -418,6 +464,37 @@ public class ActionString {
         }
         return pointSpace;
     }
+
+    public static char[] startsWithCapitalLetter(String text) {
+        char[][] wordCHar = lenghtTextWord(text);
+        int count = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                count++;
+            }
+        }
+        char[] pointSpace = new char[count + wordCHar.length - 1];
+        int value = 0;
+        for (int i = 0; i < wordCHar.length; i++) {
+            if (value > 1 && value < pointSpace.length - 1) {
+                pointSpace[value] = ' ';
+                value++;
+            }
+            for (int j = 0; j < wordCHar[i].length; j++) {
+                pointSpace[value] = wordCHar[i][j];
+                if (j == 0) {
+                    pointSpace[value] = (char) (wordCHar[i][j] - 32);
+                }
+                value++;
+            }
+        }
+        return pointSpace;
+    }
+
+  public static char[] fileName(String text){
+        char[] fileName=fileExtension(text)[fileExtension(text).length-2];
+        return fileName;
+  }
 
 
 }
